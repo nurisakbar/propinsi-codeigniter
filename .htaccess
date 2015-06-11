@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+#RewriteCond %{REQUEST_URI} ^system.*
+#RewriteRule ^(.*)$ /index.php/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|asset|uploads|robots\.txt)
+RewriteRule ^(.*)$ /billsistem/index.php?/$1 [L]
+
+
+</IfModule> 
